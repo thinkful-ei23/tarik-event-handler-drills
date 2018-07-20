@@ -25,7 +25,6 @@ function fizzBuzzer () {
   $('#number-chooser').submit(function (event) {
     event.preventDefault();
     const userSubmit = $('#number-choice').val();
-    console.log(userSubmit);
 
     $('#number-choice').val('');
 
@@ -34,16 +33,18 @@ function fizzBuzzer () {
       fizzedWord = fizzBuzz(i);
       console.log(fizzedWord);
       if (typeof fizzedWord === 'number') {
-        $('js-results').append(`
-        <div class="fizz-buzz-item">
-          <span>${fizzedWord}</span>
-        </div>
+        $('.js-results').append(
+          `
+          <div class="fizz-buzz-item">
+            <span>${fizzedWord}</span>
+          </div>
         `);
       } else {
-        $('js-results').append(`
-        <div class="fizz-buzz-item ${fizzedWord}">
-          <span>${fizzedWord}</span>
-        </div>
+        $('.js-results').append(
+          `
+          <div class="fizz-buzz-item ${fizzedWord}">
+            <span>${fizzedWord}</span>
+          </div>
         `);
       }
     }
